@@ -97,7 +97,8 @@ var app = {
         var match = hash.match(app.detailsURL);
         if (match) {
             this.store.findById(Number(match[1]), function(employee) {
-                self.slidePage(new EmployeeView(employee).render().el);
+                self.slidePage(new EmployeeView(employee).render());
+                //$('body').html(new EmployeeView(employee).render().el);
             });
         }
     }
